@@ -18,7 +18,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r migni-springboot-webservice
+  - zip -r migni-springboot-webservice *
   - mkdir -p deploy
   - mv migni-springboot-webservice.zip deploy/migni-springboot-webservice.zip
 
