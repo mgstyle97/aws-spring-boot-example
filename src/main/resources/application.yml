@@ -3,3 +3,6 @@ spring:
     include: oauth
   session:
     store-type: jdbc
+  h2:
+    console:
+      enabled: true
