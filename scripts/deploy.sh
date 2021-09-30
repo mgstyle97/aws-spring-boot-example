@@ -27,7 +27,7 @@ JAR_NAME=$(ls -tr $REPOSITORY/ | grep SNAPSHOT.jar | tail -n 1)
 
 echo "> JAR name: JAR_NAME"
 echo "> $JAR_NAME에 실행 권한 추가"
-sudo chmod +x $JAR_NAME
+chmod +x $REPOSITORY/$JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
