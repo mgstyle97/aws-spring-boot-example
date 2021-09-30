@@ -9,12 +9,12 @@ cp $REPOSITORY/zip/*.jar $REPOSITORY/
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
 # 실행 중이면 종료하기 위해서 현재 수행 중인 프로세스id를 찾습니다.
-CURRENT_PID=$(pgrep -fl migni-springboot-webservice | grep jar | awk '{print $1}')
+CURRENT_PID=$(lsof -t -i :8080 -s TCP:LISTEN)
 
 echo "현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
 
 if [ -z "$CURRENT_PID" ]; then
-  ehco "> 현재 구동 중인 애플리케이션이 없으므로 종료하지 않습니다."
+  echo "> 현재 구동 중인 애플리케이션이 없으므로 종료하지 않습니다."
 else
   echo "> kill -15 $CURRENT_PID"
   kill -15 $CURRENT_PID
